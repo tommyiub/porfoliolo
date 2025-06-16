@@ -1263,3 +1263,24 @@ section.bar-alo.full-bleed {
     text-align: left;
   }
 }
+
+/* Add more padding to Motion + Animation section */
+#motion-animation .section-content {
+  padding-bottom: 4rem;
+}
+
+/* Add even more padding to About section since it's the last one */
+#about .section-content {
+  padding-bottom: 6rem;
+}
+
+/* Extra mobile padding */
+@media screen and (max-width: 768px) {
+  #motion-animation .section-content {
+    padding-bottom: 3rem;
+  }
+  
+  #about .section-content {
+    padding-bottom: 4rem;
+  }
+}
