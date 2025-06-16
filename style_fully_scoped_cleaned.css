@@ -1,0 +1,1248 @@
+/* Reset */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: white;
+  color: #111;
+  animation: fadeDesktop 0.4s ease;
+  font-size: 12px;
+  /* Try 14px or 15px to match Mickey */
+  line-height: 1.6;
+}
+
+/* Fade animations for desktop/mobile swap */
+@keyframes fadeMobile {
+  from { opacity: 0.8; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeDesktop {
+  from { opacity: 0.8; }
+  to   { opacity: 1; }
+}
+
+
+/* Hero header */
+.hero-header {
+  width: 100vw;
+  padding: 7rem 0 2rem 1rem;
+  background: white;
+  text-align: left;
+  position: relative;
+}
+
+.hero-header h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  /* or simply 4rem */
+  font-weight: 700;
+}
+
+.hero-header p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #555;
+  margin-top: 0.5rem;
+  position: absolute;
+  top: 7rem;
+  right: 36px;
+}
+
+/* Navigation bars */
+.stacked-nav .bar {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 120px;
+  padding: 0 20px;
+  text-decoration: none;
+  box-shadow: 0 -6px 16px rgba(0, 0, 0, 0.4),
+    0 -3px 8px rgba(0, 0, 0, -0.1);
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Staggered delays */
+.stacked-nav .bar:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.stacked-nav .bar:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.stacked-nav .bar:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.stacked-nav .bar:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.stacked-nav .bar:nth-child(5) {
+  animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+  transform: translateY(0);
+}
+}
+
+.bar-title {
+  font-size: clamp(3.2rem, 1vw, 1rem);
+  font-weight: 700;
+  color: var(--fg);
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: -0.04em;
+}
+
+.bar-sub {
+  position: absolute;
+  top: 12px;
+  right: 36px;
+  font-size: clamp(0.75rem, 2vw, 1.4rem);
+  color: var(--fg, rgba(255,255,255,0.75));
+  white-space: nowrap;
+}
+
+/* Bar background colors */
+.bar-alo {
+  background-color: #000;
+}
+
+.bar-made-for-brands {
+  background-color: #f8992e;
+}
+
+.bar-creative-ventures {
+  background-color: #94291f;
+}
+
+.bar-motion-animation {
+  background-color: #134f46;
+}
+
+.bar-about {
+  background-color: #ffffff;
+}
+
+.bar-about .bar-title,
+.bar-about .bar-sub,
+.bar-about h2,
+.bar-about h3,
+.bar-about p {
+  color: #000 !important;
+}
+
+/* ONLY the Alo _section_ background → white */
+section.bar-alo.full-bleed {
+  background-color: #fff;
+}
+
+/* Override Alo section text back to black */
+section.bar-alo.full-bleed .section-content h2,
+section.bar-alo.full-bleed .section-content h3,
+section.bar-alo.full-bleed .section-content p {
+  color: #000;
+}
+
+/* Section styling */
+.project-section {
+  padding: 2rem 0;
+}
+
+.section-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  /* ✅ Ensure breathing room on both sides */
+  box-sizing: border-box;
+}
+
+.section-content h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.section-content h3 {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.section-content p {
+  font-size: clamp(1rem, 2.25vw, 1.25rem);
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* Divider */
+.thick-divider {
+  height: 6px;
+  background-color: #ffffff;
+  max-width: 1400px;
+  margin: 4rem auto;
+}
+
+/* Alo section */
+.alo-hero {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: #000;
+  color: #fff;
+}
+
+.alo-hero h2 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.alo-meta p {
+  font-size: 0.85rem;
+  margin: 0;
+  line-height: 1.4;
+  color: var(--fg);
+  text-align: right;
+}
+
+.alo-hero img {
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 8px;
+}
+
+.alo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  color: var(--fg);
+}
+
+.alo-header h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--fg);
+  margin: 0;
+}
+
+.alo-hero {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.hero-overlay-text {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  color: white;
+  font-family: inherit;
+}
+
+.hero-line-1 {
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+}
+
+.hero-line-2 {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Hero video container */
+.alo-hero-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  /* keeps the 16: 9 shape */
+  overflow: hidden;
+  border-radius: 8px;
+  /* fixed-width on desktop */
+  max-width: 1000px;
+  /* whatever your desired page width is */
+  margin: 0 auto 3rem;
+}
+
+.alo-hero-carousel video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hero iframe inside that container */
+.alo-hero-carousel iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: contain;
+}
+
+/* On small screens, let it back-off the fixed width */
+
+
+.carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: none;
+}
+
+/* Optional overlay text styles */
+.hero-overlay-text {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  color: white;
+}
+
+.reveal-text-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.reveal-text-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.alo-studio-split {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.alo-studio-split .alo-title {
+  min-width: 0;
+  flex: 1 1 250px;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #111;
+}
+
+.alo-studio-split .alo-title h3 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  /* previously 5rem max */
+  line-height: 1.1;
+  font-weight: 700;
+  margin: 0;
+}
+
+.alo-studio-split .alo-description {
+  flex: 2 1 300px;
+  max-width: 100%;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  /* fix invalid size */
+  line-height: 1.6;
+  color: var(--fg);
+}
+
+.alo-studio-split .alo-description p.reveal-text-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pacsun-split-title {
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.1;
+}
+
+/* Make Owning America title smaller */
+.bar-owning-america .pacsun-split-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem) !important;
+  line-height: 1.1 !important;
+}
+
+#made-for-brands .pacsun-split-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.1;
+}
+
+
+.alo-summary {
+  display: block;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+  box-sizing: border-box;
+}
+
+.summary-line {
+  max-width: 20ch;
+  font-size: clamp(0.9rem, 2vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--fg);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  letter-spacing: -0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.summary-line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.glass-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.2);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  z-index: 999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.nav-left img,
+.nav-right img {
+  height: 24px;
+  cursor: pointer;
+}
+
+.glass-nav.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  display: flex;
+}
+
+.glass-nav-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 2rem;
+  /* pushes icons to ends */
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+  align-items: center;
+}
+
+.glass-nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.glass-nav a:hover {
+  color: #444;
+}
+
+.glass-subnav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.glass-subnav a {
+  color: #111;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.glass-subnav a:hover {
+  text-decoration: underline;
+}
+
+.glass-section-label {
+  font-size: 0.875rem;
+  color: #000;
+  font-weight: 500;
+  padding: 0 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.glass-nav.visible .glass-section-label {
+  opacity: 1;
+}
+
+.full-bleed {
+  scroll-margin-top: 80px;
+}
+
+.nav-icon-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Remove text styles on links */
+.nav-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg);
+  /* inherits your foreground var per section */
+  text-decoration: none;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* Size and color the SVG */
+.nav-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  /* or remove to let it go full-bleed */
+  aspect-ratio: var(--ar);
+  /* e.g. 750/410 */
+  overflow: hidden;
+  background: #000;
+  border-radius: 8px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Pacsun split headline sizing */
+.pacsun-split-title {
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  line-height: 1.0;
+}
+
+/* Base divider uses the section’s --divider color */
+.alo-divider {
+  border: none;
+  height: 1px;
+  margin: 2rem 0;
+  color: var(--fg);
+  background-color: var(--divider, #111);
+}
+
+/* Ensure dividers are visible in the Alo section */
+.bar-alo .alo-divider {
+  background-color: #333 !important;
+  opacity: 1 !important;
+  height: 1px !important;
+  margin: 2rem 0 !important;
+  border: none !important;
+  display: block !important;
+}
+
+/* Specific styling for dividers in the media panels */
+.bar-alo .media-panels .alo-divider {
+  background-color: #666 !important;
+  height: 1px !important;
+  margin: 3rem 0 !important;
+  width: 100% !important;
+}
+
+.bar-made-for-brands .alo-divider {
+  background-color: #fff !important;
+}
+
+/* default foreground if none set */
+:root {
+  --fg: #111;
+}
+
+/* per‐section foreground colors */
+.bar-alo {
+  --fg: #fff;
+}
+
+/* white text on black */
+.bar-made-for-brands {
+  --fg: #ffffff;
+}
+
+/* black text on orange */
+.bar-creative-ventures {
+  --fg: #fff;
+}
+
+/* white text on red */
+.bar-motion-animation {
+  --fg: #fff;
+}
+
+/* white text on green */
+.bar-about {
+  --fg: #111;
+}
+
+/* black text on white */
+
+.bar-socialdropouts {
+  background-color: #000 !important;
+  --fg: #fff;
+}
+
+.bar-socialdropouts .alo-title h3,
+.bar-socialdropouts .alo-description p,
+.bar-socialdropouts .alo-description .reveal-text-on-scroll {
+  color: #fff !important;
+}
+
+
+.pacsun-sprint-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0;
+  margin: 0;
+  max-width: none;
+}
+
+.pacsun-sprint-text {
+  flex: 1;
+  /* 👈 This is the key */
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  max-width: 50%;
+}
+
+.video-wrapper.vertical {
+  aspect-ratio: 9/16;
+  max-width: none;
+}
+
+/* Center only the Pacsun hero video */
+#made-for-brands > .video-wrapper {
+  max-width: 1000px;
+  /* match your section’s max width */
+  margin: 0;
+}
+
+/* And ensure the iframe fills it */
+#made-for-brands > .video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Center & size Pacsun hero video */
+#made-for-brands > .video-wrapper {
+  display: block;
+  /* treat it like an image block */
+  margin: 0 auto 2rem;
+  /* auto L/R centers it */
+  max-width: 1000px;
+  /* cap at your container width */
+  aspect-ratio: var(--ar);
+}
+
+/* Align "Endless Summer" to the left edge of container */
+#made-for-brands .alo-studio-split {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#made-for-brands .alo-title {
+  flex: 1 1 50%;
+  text-align: left;
+}
+
+#made-for-brands .alo-description {
+  flex: 2 1 50%;
+  text-align: left;
+}
+
+
+/* ─── Pacsun Sprint: full-width & proper fit ─── */
+.pacsun-sprint-wrapper {
+  max-width: 1000px;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.pacsun-sprint-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.pacsun-sprint-wrapper .video-wrapper {
+  flex: 1;
+  /* let it grow to fill the remaining space */
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+  /* video takes ~60% */
+    min-width: 0;
+  /* allow it to shrink too */
+    margin-top: 0;
+  margin-bottom: 2rem; /* add bottom spacing only */
+  max-width: 50%;
+}
+
+.pacsun-sprint-wrapper .video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  /* 
+    object-fit: cover → fills the box, cropping edges
+    object-fit: contain → shows the entire frame, letterboxed
+  */
+  object-fit: cover;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* Constraint all wrappers unless you need full-bleed */
+[class$="-wrapper"] {
+  max-width: 1000px;
+  margin: 0 auto;
+  /* consistent breathing room */
+  box-sizing: border-box;
+}
+
+/* ─── full-bleed section backgrounds ─── */
+.full-bleed {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
+
+/* ─── inner content constraint ─── */
+.section-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  /* your horizontal gutters */
+  box-sizing: border-box;
+}
+
+/* Re-center inner content with breathing room */
+.full-bleed .section-content .inner-padded {
+  max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Shared content constraint for major sections */
+.aligned-container {
+  max-width: 1000px;
+  box-sizing: border-box;
+}
+
+.bar-socialdropouts .alo-title h3 {
+  font-size: clamp(1rem, 4vw, 3.5rem);
+}
+
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.bar-alo .summary-line {
+  color: #000 !important;
+}
+
+.pacsun-sprint-wrapper {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+.pacsun-sprint-wrapper .video-wrapper,
+.pacsun-sprint-text {
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Master layout container – shared across all sections */
+.aligned-container {
+  max-width: 1000px;
+  box-sizing: border-box;
+}
+
+/* Force consistent max width + side spacing across all sections */
+.aligned-container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.full-bleed .section-content .inner-padded {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* 1. Make your header container a 1 000px grid box */
+.aligned-container.alo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem; /* adjust as needed for breathing room */
+}
+
+/* 2. Tuck the meta flush to the right edge of that grid */
+.aligned-container.alo-header .alo-meta {
+  margin: 0;
+  text-align: right;
+}
+
+/* ─── Section headers in a 1000px grid ─── */
+.aligned-container.alo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;     /* vertically center title & date */
+  margin-bottom: 2rem;     /* breathing room before your carousel */
+}
+
+/* Tuck the date flush to the right edge of that grid */
+.aligned-container.alo-header .alo-meta {
+  margin: 0;
+  text-align: right;
+}
+
+.alo-hero-carousel,
+.alo-hero-carousel img,
+.alo-hero-carousel iframe,
+.alo-hero-carousel video {
+  max-width: 1000px;    /* same as your grid */
+  width: 100%;          /* fill that grid */
+  margin: 0 auto 4rem;  /* center it + add 4rem bottom spacing */
+  box-sizing: border-box;
+}
+
+/* Add extra spacing specifically for Pacsun hero */
+#made-for-brands .alo-hero-carousel {
+  margin-bottom: 2rem; /* increase from 4rem to 6rem */
+}
+
+
+
+/* Ensure mobile keeps existing spacing */
+@media screen and (max-width: 768px) {
+  .alo-hero-carousel,
+  .alo-hero-carousel img,
+  .alo-hero-carousel iframe,
+  .alo-hero-carousel video {
+    margin: 0 auto 1.5rem; /* keep existing mobile spacing */
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  /* collapse all your main wrappers AND hero carousels to 88vw */
+  .section-content,
+  .inner-padded,
+  .alo-hero-carousel,
+  .pacsun-sprint-wrapper,
+  .alo-studio-split,
+  .alo-summary,
+  .alo-description,
+  .alo-header,
+  .alo-meta,
+  .video-wrapper {
+    max-width: 88vw;
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+  /* make sure the carousel itself still fills its parent */
+  .alo-hero-carousel {
+    width: 100%;
+    margin-bottom: 1.5rem; /* or whatever gutter you like */
+  }
+}
+
+/* Text frame image */
+.text-frame-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
+/* Loading indicator */
+.loading-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+  font-size: 14px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.loading-indicator.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scroll-trigger-point {
+  height: 1px;
+  background: transparent;
+  margin: none;
+}
+
+
+.full-width-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Reduce spacing after the alo-studio-split section */
+.bar-alo .alo-studio-split {
+  margin-bottom: 1rem;
+}
+
+/* Reduce spacing before the sticky-scroll-section */
+.sticky-scroll-section {
+  margin-top: 0;
+  min-height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  justify-content: space-between;
+} 
+
+/* Only add the tall height on desktop when needed for scroll animation */
+@media screen and (min-width: 769px) {
+  .sticky-scroll-section {
+    min-height: 150vh;
+  }
+}
+
+
+.text-animation-wrapper {
+  position: fixed;
+  top: 20vh;
+  left: calc(50% - 500px + 30px);
+  width: 180px;
+  aspect-ratio: 1;
+  z-index: 100;
+  opacity: 0;
+  flex-shrink: 0;
+  pointer-events: none;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.media-panels {
+  width: 70%;
+  position: relative;
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.media-panel {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.media-panel video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+.text-animation-wrapper.visible {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .sticky-scroll-section {
+    flex-direction: column;
+    padding: 0 6vw;
+    min-height: auto;
+    max-width: 88vw;
+    margin: 0 auto;
+  }
+  
+  .text-animation-wrapper {
+    position: relative;
+    left: auto;
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 2rem;
+    opacity: 1;
+  }
+  
+  .media-panels {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .media-panel {
+    width: 100%;
+    margin-bottom: 2rem;
+    text-align: right;
+  }
+  
+  .media-panel video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-left: auto;
+    display: block;
+  }
+}
+
+/* Add drop shadow to Alo section to match other nav bars */
+section.bar-alo.full-bleed {
+  background-color: #fff;
+  box-shadow: 0 -6px 16px rgba(0, 0, 0, 0.4),
+    0 -3px 8px rgba(0, 0, 0, -0.1);
+}
+
+/* Justify the second description paragraph in Social Dropouts */
+.bar-socialdropouts .alo-description p:last-child {
+  text-align: justify;
+  text-align-last: left;
+}
+
+/* Fix Motion + Animation section title spacing and meta text */
+#motion-animation .alo-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem) !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Fix mobile line height and spacing for motion animation section */
+@media screen and (max-width: 768px) {
+  .bar-motion-animation .alo-meta {
+    line-height: 1.1 !important;
+  }
+  
+  .bar-motion-animation .alo-meta p {
+    line-height: 1.1 !important;
+    margin-bottom: 0.1rem !important;
+    font-size: 0.8rem !important;
+  }
+}
+/* Make Motion+Animation header smaller */
+#motion-animation .alo-header h2 {
+  font-size: clamp(2.5rem, 4vw, 4.5rem) !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Add more top spacing for all section headers without background */
+.full-bleed .section-content {
+  padding-top: 3rem;
+}
+
+/* Adjust mobile top spacing */
+@media screen and (max-width: 768px) {
+  .full-bleed .section-content {
+    padding-top: 1rem;
+  }
+}
+
+.video-align-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.bar-owning-america {
+  background-color: #1e3a8a !important;
+  --fg: #fff;
+}
+
+.bar-owning-america .section-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 0;
+  box-sizing: border-box;
+}
+
+.bar-owning-america .alo-title h3,
+.bar-owning-america .alo-description p,
+.bar-owning-america .alo-description .reveal-text-on-scroll {
+  color: #fff !important;
+}
+
+.bar-owning-america .alo-divider {
+  background-color: #fff !important;
+}
+
+/* Make Owning America main title smaller */
+.bar-owning-america .alo-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem) !important;
+  line-height: .0 !important;
+}
+
+/* Justify all description text in alo-description sections */
+.alo-description p {
+  text-align: justify !important;
+  text-align-last: left !important;
+}
+
+/* Justify text in pacsun-sprint-text sections */
+.pacsun-sprint-text p {
+  text-align: justify !important;
+  text-align-last: left !important;
+}
+
+/* Fix About section text visibility */
+.bar-about .alo-studio-split .alo-title h3 {
+  color: #000 !important;
+}
+
+.bar-about .alo-studio-split .alo-description p {
+  color: #000 !important;
+}
+
+.bar-about .alo-studio-split .alo-description p strong {
+  color: #000 !important;
+}
+
+/* Align glass nav with your 1000px container and add side padding */
+.glass-nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 .5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Position section label in center without absolute positioning */
+.glass-section-label {
+  font-size: 0.875rem;
+  color: #000;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex: 1;
+  text-align: center;
+}
+
+/* Add more padding on mobile for better alignment */
+@media screen and (max-width: 768px) {
+  .glass-nav-inner {
+    padding: .5rem;
+  }
+}
