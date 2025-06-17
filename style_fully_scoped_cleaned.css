@@ -1125,18 +1125,7 @@ section.bar-alo.full-bleed {
   letter-spacing: -0.02em !important;
 }
 
-/* Fix mobile line height and spacing for motion animation section */
-@media screen and (max-width: 768px) {
-  .bar-motion-animation .alo-meta {
-    line-height: 1.1 !important;
-  }
-  
-  .bar-motion-animation .alo-meta p {
-    line-height: 1.1 !important;
-    margin-bottom: 0.1rem !important;
-    font-size: 0.8rem !important;
-  }
-}
+
 /* Make Motion+Animation header smaller */
 #motion-animation .alo-header h2 {
   font-size: clamp(2.5rem, 4vw, 4.5rem) !important;
@@ -1247,8 +1236,25 @@ section.bar-alo.full-bleed {
   }
 }
 
-/* Fix Owning America title overlap on mobile */
+/* Fix mobile meta text alignment and formatting for all sections */
 @media screen and (max-width: 768px) {
+  .alo-meta {
+    text-align: right !important;
+    line-height: 1.2 !important;
+  }
+  
+  .alo-meta p {
+    display: block !important;
+    line-height: 1.2 !important;
+    margin: 0 0 0.2rem 0 !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .alo-meta p:last-child {
+    margin-bottom: 0 !important;
+  }
+  
+  /* Fix Owning America title overlap on mobile */
   .bar-owning-america .alo-header {
     flex-direction: column;
     align-items: flex-start;
@@ -1260,7 +1266,14 @@ section.bar-alo.full-bleed {
   }
   
   .bar-owning-america .alo-meta {
-    text-align: right;
+    text-align: right !important;
+    align-self: flex-end !important;
+    width: 100% !important;
+  }
+  
+  /* Fix all header alignment on mobile */
+  .alo-header {
+    align-items: flex-start !important;
   }
 }
 
