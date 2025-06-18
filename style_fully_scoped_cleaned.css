@@ -1297,3 +1297,7 @@ section.bar-alo.full-bleed {
     padding-bottom: 4rem;
   }
 }
+
+.bar-socialdropouts .alo-header h2 {
+  line-height: 0.8 !important; /* adjust this value */
+}
